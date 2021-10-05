@@ -29,3 +29,5 @@ def waitAttackStart(timeout=60):
 
 def waitAction(action = BEGIN_ATTACK, timeout = 60):
     return wait(action,timeout,3);    
+
+

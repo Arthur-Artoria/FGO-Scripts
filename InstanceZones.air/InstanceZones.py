@@ -13,10 +13,13 @@ using('Friend.air')
 using('MonaLisa.air')
 using('utils.air');
 using('Game.air');
+using('Ziege.air');
+using('Lilith.air');
+using('LsleOfSkye.air');
 
 from Hero import Hero
 from Round import Round
-from constants import FIRST,SECOND,THIRD,KONGMING_NAME_IMG,SCATI_NAME_IMG;
+from constants import FIRST,SECOND,THIRD,KONGMING_NAME_IMG,SCATI_NAME_IMG,ARTORIA_CASTER_NAME_IMG;
 from Lancelot import Lancelot
 from Clothes import Clothes
 from LancelotAndArtoriaLancer import LancelotAndArtoriaLancer
@@ -24,7 +27,9 @@ from Friend import Friend
 from MonaLisa import MonaLisa
 from utils import waitAction,handleSimpleClick
 from Game import GameActivity;
-
+from Ziege import Ziege;
+from Lilith import Lilith,ArtoriaArcher;
+from LsleOfSkye import TeamOne,TeamTwo,TeamThree;
 auto_setup(__file__)
 
 # Lancelot = Scati = ScatiFriend = None;
@@ -43,6 +48,7 @@ class InstanceZones:
     
     def beforeStart(self):
         self.count = self.count + 1;
+        print(self.count);
         if self.totalCount == None: return;
         if self.count > self.totalCount: return;
         if self.loop == False: return;    
@@ -60,8 +66,9 @@ class InstanceZones:
             
 
 if __name__ == '__main__':
-    InstanceZones(GameActivity,SCATI_NAME_IMG,totalCount = 2,loop = True).start();
+    InstanceZones(TeamThree,ARTORIA_CASTER_NAME_IMG,totalCount = 30,loop = True).start();
 #     InstanceZones(MonaLisa,KONGMING_NAME_IMG).afterEnd();
+
 
 
 

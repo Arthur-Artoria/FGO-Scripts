@@ -6,7 +6,7 @@ from airtest.core.api import *
 using('constants.air')
 using('utils.air');
 
-from constants import CONTINUE_ATTACK,STONE,COPPER_APPLE,SILVER_APPLE;
+from constants import CONTINUE_ATTACK,STONE,COPPER_APPLE,SILVER_APPLE,GOLD_APPLE;
 from utils import handleSimpleClick,waitAction;
 
 auto_setup(__file__)
@@ -28,9 +28,9 @@ class Continue:
     def eatApple(self):
         if self.isEatApple == False:pass;
         if exists(STONE):
-            swipe(STONE, vector=[0, -1])
-            sleep(2)
-            handleSimpleClick(SILVER_APPLE)
+#             swipe(STONE, vector=[0, -1])
+#             sleep(2)
+            handleSimpleClick(GOLD_APPLE)
             confirm = waitAction(Template(r"tpl1615556577657.png", record_pos=(
                 0.156, 0.155), resolution=(1280, 720)))
             handleSimpleClick(confirm)
@@ -41,4 +41,5 @@ if __name__ == '__main__':
     Continue().eatApple();
     
         
+
 

@@ -10,14 +10,15 @@ using('constants.air');
 from Hero import Hero
 from utils import getX,waitAttackStart,handleSimpleClick
 
-from constants import FIRST,SECOND,INSTRUCTION_X,INSTRUCTION_Y,INSTRUCTION_WIDTH,INSTRUCTION_SPACING,BEGIN_ATTACK;
+from constants import FIRST,SECOND,THIRD,INSTRUCTION_X,INSTRUCTION_Y,INSTRUCTION_WIDTH,INSTRUCTION_SPACING,BEGIN_ATTACK;
 
 auto_setup(__file__)
 
 class Round:
     
-    def __init__(self,ready = None):
+    def __init__(self,ready = None, lastHit = None):
         self.ready = ready;
+        self.lastHit = lastHit;
     
         
     def attack(self):
@@ -26,12 +27,13 @@ class Round:
             self.ready();
         handleSimpleClick(BEGIN_ATTACK,2)
 
-        
-    def choseInstruction(self, one, two = FIRST,three = SECOND):
+    
+    #选择指令卡
+    def choseInstruction(self, one = THIRD, two = FIRST,three = SECOND):
         list = [one,two,three];
         for instruction in list:
             self.clickInstruction(instruction);
-        
+            
     
     def clickInstruction(self,instruction):
         if type(instruction) == int :
@@ -40,3 +42,4 @@ class Round:
         elif type(instruction) == Hero:
             instruction.castingUltimate()
             
+

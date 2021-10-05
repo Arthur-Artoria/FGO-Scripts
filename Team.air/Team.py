@@ -13,7 +13,7 @@ using('Continue.air');
 from Round import Round
 from Clothes import Clothes
 from ExchangeClothes import ExchangeClothes;
-from constants import BEGIN_TASK,BEGIN_TASK,BEGIN_TASK_COOR,ATTACK_END,REJECT_FRIEND_COOR,REJECT_FRIEND_TIP,NEXT_STEP,STONE;
+from constants import BEGIN_TASK,BEGIN_TASK,BEGIN_TASK_COOR,ATTACK_END,REJECT_FRIEND_COOR,REJECT_FRIEND_TIP,NEXT_STEP,STONE,NETWORK_ERROR,NETWORK_RETRY;
 from utils import waitAction,handleSimpleClick;
 from Continue import Continue;
 
@@ -29,7 +29,6 @@ class Team:
         self.continueAttack = Continue();
         self.clothes = ExchangeClothes();
         self.readys = [self.roundFirst, self.roundSecond, self.roundThird];
-        self.rounds = self.createRounds()
     
     
     def createRounds(self):
@@ -41,22 +40,22 @@ class Team:
         round.choseInstruction(self.carry)
     
 
-    def attack(self, rounds):
+    def attack(self):
+        rounds = self.createRounds();
         for round in rounds:
             self.setRound(round)
 
 
     def start(self):
         if self.again == True:
-            print("开始攻击")
             waitAction();
         else:
-            print("开始任务")
             waitAction(BEGIN_TASK)
             handleSimpleClick(BEGIN_TASK_COOR)
             waitAction();
+            
         
-        self.attack(self.rounds)
+        self.attack()
         self.end()
     
     def beforeEnd(self):
@@ -69,7 +68,9 @@ class Team:
     
     def experience(self):
         #羁绊结算
-        self.handleSkepClick();
+        sleep(40);
+#         self.handleSkepClick();
+        wait(ATTACK_END,60,5,self.handleSkepClick)
         #点击跳过经验结算
         handleSimpleClick(NEXT_STEP);
         #经验结算
@@ -102,10 +103,10 @@ class Team:
     
     def end(self):
         self.beforeEnd();
-        waitAction(ATTACK_END);
+#         waitAction(ATTACK_END);
         self.experience();
-        self.eatApples();
         self.rejectFriend();
+        self.eatApples();
         self.afterEnd();
         
         
@@ -116,5 +117,15 @@ class Team:
             self.continueAttack.again();
             
     
+    def networkError(self):
+        if exists(NETWORK_ERROR):
+            handleSimpleClick(NETWORK_RETRY);
+            
+    
 if __name__ == '__main__':
-    Team().eatApples();
+    Team().end();
+
+
+
+
+

@@ -27,6 +27,7 @@ class MonaLisa(Team):
         
     def roundFirst(self):
         self.carry.castingSkill(1)
+        self.scatiFriend.castingSkill(2)
 #         self.kongMing.castingSkill(1,self.carry);
 #         self.kongMing.castingSkill(2);
 #         self.kongMing.castingSkill(3);
@@ -46,6 +47,7 @@ class MonaLisa(Team):
         self.clothes.exchangeHero(2,4);
         self.kongMing.castingSkill(2);
         self.kongMing.castingSkill(3);
+        self.clothes.castingSkill(1)
         
 
     def roundThird(self):
@@ -53,11 +55,11 @@ class MonaLisa(Team):
 #         self.scati.castingSkill(2)
         
         self.kongMing.castingSkill(1,self.carry);
-        self.clothes.castingSkill(1)
-        self.scatiFriend.castingSkill(2)
+        
+        
         
         
 if __name__ == '__main__':
 #     MonaLisa().start()
     monaLisa = MonaLisa()
-    monaLisa.attack(monaLisa.rounds)
+    monaLisa.attack()

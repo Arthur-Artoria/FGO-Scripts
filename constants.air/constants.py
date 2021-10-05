@@ -68,25 +68,42 @@ NEXT_STEP = [1400,840];
 
 CONTINUE_ATTACK = Template(r"tpl1622819688809.png", record_pos=(0.156, 0.161), resolution=(1600, 900));
 
+ATTACK_BACK = Template(r"tpl1632499809015.png", record_pos=(0.408, 0.256), resolution=(1641, 934));
+
+
 SCATI_NAME_IMG = Template(r"tpl1615117150166.png",
                                 record_pos=(-0.154, 0.08), resolution=(1280, 720))
 KONGMING_NAME_IMG = Template(r"tpl1621151116274.png", record_pos=(-0.113, 0.198), resolution=(1280, 720))
+ARTORIA_CASTER_NAME_IMG = Template(r"tpl1628384073701.png", record_pos=(-0.134, 0.115), resolution=(1600, 900))
+
 BEGIN_TASK = Template(r"tpl1615117806195.png",
                                 record_pos=(0.428, 0.246), resolution=(1280, 720))
 BEGIN_ATTACK = Template(r"tpl1615114541021.png", record_pos=(
         0.384, 0.191), resolution=(1280, 720))
 
+NETWORK_ERROR = Template(r"tpl1632101771690.png", record_pos=(0.156, 0.158), resolution=(1600, 900))
+NETWORK_RETRY = [1060,700];
+
+
 A = Template(r"tpl1615120972447.png",
                       record_pos=(-0.357, -0.137), resolution=(1280, 720));
 
-ATTACK_END = Template(r"tpl1622825649397.png", record_pos=(-0.001, 0.224), resolution=(1600, 900))
+# ATTACK_END = Template(r"tpl1622825649397.png", record_pos=(-0.001, 0.224), resolution=(1600, 900))
+
+ATTACK_END = A;
+
 
 REJECT_FRIEND_TIP = Template(r"tpl1621154035653.png", record_pos=(0.009, 0.145), resolution=(1280, 720))
 STONE = Template(r"tpl1615554190341.png", record_pos=(-0.209, -0.141), resolution=(1280, 720))
 
+GOLD_APPLE = Template(r"tpl1628383784464.png", record_pos=(-0.207, -0.03), resolution=(1600, 900));
+
+
 COPPER_APPLE = Template(r"tpl1622822958084.png", record_pos=(-0.209, 0.109), resolution=(1600, 900))
 
 SILVER_APPLE = Template(r"tpl1623079626986.png", record_pos=(-0.209, 0.088), resolution=(1600, 900));
+
+
 
 
 
