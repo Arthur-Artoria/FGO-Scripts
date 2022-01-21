@@ -68,9 +68,7 @@ class Team:
     
     def experience(self):
         #羁绊结算
-        sleep(40);
-#         self.handleSkepClick();
-        wait(ATTACK_END,60,5,self.handleSkepClick)
+        waitAction(ATTACK_END)
         #点击跳过经验结算
         handleSimpleClick(NEXT_STEP);
         #经验结算

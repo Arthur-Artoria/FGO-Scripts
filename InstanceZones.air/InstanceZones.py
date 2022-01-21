@@ -66,7 +66,7 @@ class InstanceZones:
             
 
 if __name__ == '__main__':
-    InstanceZones(TeamThree,ARTORIA_CASTER_NAME_IMG,totalCount = 30,loop = True).start();
+    InstanceZones(ArtoriaArcher, ARTORIA_CASTER_NAME_IMG,totalCount = 0,loop = False).start();
 #     InstanceZones(MonaLisa,KONGMING_NAME_IMG).afterEnd();
 
 

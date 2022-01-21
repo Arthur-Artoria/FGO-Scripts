@@ -35,41 +35,41 @@ class Lilith(Team):
         
         
     def roundSecond(self):
-        self.clothes.castingSkill(3,self.carry);
+        self.clothes.castingSkill(2, self.carry);
         
 
     def roundThird(self):
         self.carry.castingSkill(3);
-        self.clothes.castingSkill(1, self.carry);
+#         self.clothes.castingSkill(1, self.carry);
         
         
 class ArtoriaArcher(Team):
     def __init__(self):
         super().__init__();
         self.artoriaArcher = Hero(2);
-        self.artoriaRuler = Hero(3);
+        self.artoria = Hero(3);
         self.doubleHero = DoubleHero();
         [self.mine, self.friend] = self.doubleHero.heros;
         
         
     def roundFirst(self):
-        self.carry = self.artoriaRuler;
-        self.mine.castingSkill(1);
-        self.mine.castingSkill(2, self.artoriaArcher);
-        self.mine.castingSkill(3, self.artoriaArcher);
-        self.artoriaArcher.castingSkill(3);
-        self.carry.castingSkill(1);
+        self.carry = self.artoriaArcher;
+        self.friend.castingSkill(1);
+        self.friend.castingSkill(2, self.carry);
+        self.friend.castingSkill(3, self.carry);
+        self.clothes.exchangeHero(3,4);
         self.carry.castingSkill(3);
-        self.clothes.exchangeHero(1,4);
+        self.carry.castingSkill(1);
         self.mine.castingSkill(1);
+        self.mine.castingSkill(2, self.carry);
+        self.mine.castingSkill(3, self.carry);
+        self.artoria.castingSkill(1);
 
         
     def roundSecond(self):
-        self.carry = self.artoriaArcher;
-        self.carry.castingSkill(1);
-        self.artoriaRuler.castingSkill(2, self.mine);
-        self.mine.castingSkill(3, self.carry);
+        pass;
         
 
     def roundThird(self):
-        self.mine.castingSkill(2, self.carry);
+        self.artoria.castingSkill(2);
+        self.artoria.castingSkill(3);

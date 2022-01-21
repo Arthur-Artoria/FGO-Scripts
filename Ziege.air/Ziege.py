@@ -32,8 +32,13 @@ class Ziege(Team):
         self.doubleHero.castingSkills(2, self.carry);
         self.doubleHero.castingSkills(3, self.carry);
         self.carry.castingSkill(1);
-        self.carry.castingSkill(2);
         
+    
+    def roundSecond(self):
+#         self.clothes.castingSkill(2, self.carry);
+        pass;
+    
 
     def roundThird(self):
-        self.clothes.castingSkill(2, self.carry);
+        self.carry.castingSkill(2);
+#         self.carry.castingSkill(3);
